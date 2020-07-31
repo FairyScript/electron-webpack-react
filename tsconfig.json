@@ -1,0 +1,32 @@
+{
+    "extends": "./node_modules/electron-webpack/tsconfig-base.json",
+    "compilerOptions": {
+        "allowJs": false,
+        "module": "commonjs",
+        "moduleResolution": "node",
+        "newLine": "LF",
+        "target": "es2018",
+        "sourceMap": true,
+        "declaration": true,
+        "jsx": "react",
+        "baseUrl": ".",
+        "lib": [
+            "es2020",
+            "dom"
+        ],
+        "strict": true,
+        "noUnusedLocals": true,
+        "noUnusedParameters": true,
+        "noImplicitReturns": true,
+        "noFallthroughCasesInSwitch": true,
+        "experimentalDecorators": true,
+        "esModuleInterop": true
+    },
+    "include": [
+        "src/**/*"
+    ],
+    "exclude": [
+        ".git",
+        "node_modules"
+    ]
+}
