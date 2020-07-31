@@ -8,6 +8,11 @@
     "dist": "yarn compile && electron-builder",
     "dist:dir": "yarn dist --dir -c.compression=store -c.mac.identity=null"
   },
+  "electronWebpack": {
+    "renderer": {
+      "webpackConfig": "config/webpack.renderer.config.js"
+    }
+  },
   "dependencies": {
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
