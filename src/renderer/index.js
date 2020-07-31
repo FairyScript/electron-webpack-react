@@ -5,7 +5,7 @@ import ReactDOM from 'react-dom';
 import { MainPage } from './MainPage';
 
 function App() {
-  return <MainPage />
+  return <h1>Hello World!</h1>
 }
 
 ReactDOM.render(<App />, document.getElementById('app'));
