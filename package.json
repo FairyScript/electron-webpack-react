@@ -21,7 +21,7 @@
   "devDependencies": {
     "@babel/preset-react": "^7.10.4",
     "@types/react": "^16.9.43",
-    "electron": "8.2.4",
+    "electron": "8.5.1",
     "electron-builder": "^22.4.1",
     "electron-webpack": "^2.8.2",
     "electron-webpack-ts": "^4.0.1",
