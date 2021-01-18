@@ -1,5 +1,8 @@
-# electron-webpack-quick-start
+# electron-webpack-react
+
 > A bare minimum project structure to get started developing with [`electron-webpack`](https://github.com/electron-userland/electron-webpack).
+
+> A fork from (https://github.com/electron-userland/electron-webpack-quick-start)
 
 Thanks to the power of `electron-webpack` this template comes packed with...
 
@@ -18,7 +21,7 @@ The use of the [yarn](https://yarnpkg.com/) package manager is **strongly** reco
 ```bash
 # create a directory of your choice, and copy template using curl
 mkdir new-electron-webpack-project && cd new-electron-webpack-project
-curl -fsSL https://github.com/electron-userland/electron-webpack-quick-start/archive/master.tar.gz | tar -xz --strip-components 1
+curl -fsSL https://github.com/FairyScript/electron-webpack-react/archive/master.tar.gz | tar -xz --strip-components 1
 
 # or copy template using git clone
 git clone https://github.com/FairyScript/electron-webpack-react.git
