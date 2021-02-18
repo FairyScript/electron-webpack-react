@@ -5,24 +5,25 @@ module.exports = config => {
 
   config.devServer.historyApiFallback = { disableDotRule: true };
   config.externals.push(...['react', 'react-dom']);
-  
-  //react-refresh must be loaded before other loaders
-  config.module.rules.unshift({
-    test: /\.[jt]sx?$/,
-    exclude: /node_modules/,
-    use: [
-      {
-        loader: require.resolve('babel-loader'),
-        options: {
-          plugins: [
-            isDevelopment && [require.resolve('react-refresh/babel'), {
-              skipEnvCheck: true,
-            }],
-          ].filter(Boolean)
-        },
-      },
-    ],
-  });
+
+  //react-refresh
+  const jsloader = config.module.rules.findIndex(i => i.test.toString().includes('js'));
+  const tsloader = config.module.rules.findIndex(i => i.test.toString().includes('ts'));
+
+  //JavaScript
+  config.module.rules[jsloader].use.options.plugins.push(...[
+    isDevelopment && [require.resolve('react-refresh/babel'), {
+      skipEnvCheck: true,
+    }],
+  ].filter(Boolean));
+
+  ////TypeScript
+  config.module.rules[tsloader].use.options = {
+    getCustomTransformers: () => ({
+      before: [require('react-refresh/typescript')()]
+    }),
+  }
+
   config.plugins.push(...[
     isDevelopment && new ReactRefreshWebpackPlugin(),
   ].filter(Boolean));
